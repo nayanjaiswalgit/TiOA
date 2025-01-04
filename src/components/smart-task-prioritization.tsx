@@ -1,9 +1,15 @@
 import { useState } from 'react'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
-const initialTasks = [
+interface Task {
+  id: string
+  content: string
+  priority: 'high' | 'medium' | 'low'
+}
+
+const initialTasks: Task[] = [
   { id: 'task1', content: 'Complete project proposal', priority: 'high' },
   { id: 'task2', content: 'Review team presentations', priority: 'medium' },
   { id: 'task3', content: 'Schedule client meeting', priority: 'low' },
@@ -13,10 +19,10 @@ const initialTasks = [
 export default function SmartTaskPrioritization() {
   const [tasks, setTasks] = useState(initialTasks)
 
-  const onDragEnd = (result ) => {
+  const onDragEnd = (result: DropResult) => {
     if (!result.destination) return
 
-    const newTasks = Array.from(tasks)
+    const newTasks: Task[] = Array.from(tasks)
     const [reorderedItem] = newTasks.splice(result.source.index, 1)
     newTasks.splice(result.destination.index, 0, reorderedItem)
 
@@ -59,4 +65,3 @@ export default function SmartTaskPrioritization() {
     </Card>
   )
 }
-
