@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import TaskList from '../components/task-list'
 import WorkTimeAndPomodoroTracker from '../components/work-time-and-pomodoro-tracker'
@@ -12,7 +11,6 @@ import LifeGoalsAlignment from '../components/life-goals-alignment'
 import LearningGrowthSuggestions from '../components/learning-growth-suggestions'
 import ContextAwareReminders from '../components/context-aware-reminders'
 import PersonalTasks from '../components/personal-tasks'
-import LearningTracker from '.../components/learning-tracker'
 
 export default function Dashboard() {
   return (
@@ -37,7 +35,6 @@ export default function Dashboard() {
             </Card>
             <PersonalTasks />
             <LifeGoalsAlignment />
-            <LearningTracker />
             <LearningGrowthSuggestions />
           </div>
 

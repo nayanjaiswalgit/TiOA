@@ -6,7 +6,7 @@ import { Progress } from "@/components/ui/progress"
 export default function HealthWidget() {
   const [heartRate, setHeartRate] = useState(75)
   const [steps, setSteps] = useState(6500)
-  const [sleep, setSleep] = useState(450) // 7.5 hours in minutes
+  const [sleep] = useState(450) // 7.5 hours in minutes
   const [overallHealth, setOverallHealth] = useState(80)
 
   useEffect(() => {

@@ -13,7 +13,7 @@ const initialTasks = [
 export default function SmartTaskPrioritization() {
   const [tasks, setTasks] = useState(initialTasks)
 
-  const onDragEnd = (result) => {
+  const onDragEnd = (result ) => {
     if (!result.destination) return
 
     const newTasks = Array.from(tasks)
